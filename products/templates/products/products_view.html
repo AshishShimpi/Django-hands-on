@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ object_list }}
+
+{% for instance in object_list %}
+  <p> {{instance.id}} -  <a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a> </p>
+
+{% endfor %}
+
+{% endblock %}
+
+<!-- <form action="." method="POST">{% csrf_token %}
+  <h1>Do you want to delete the title {{object.title}}</h1>
+  <p><input type="submit" value="Yes">  <a href="/product/">cancel</a></p>
+
+</form> -->
+
+<!-- One method for showing how to render form(product) with initial value -->
+<!-- <form action="." method="POST">{% csrf_token  %}
+  {{ form.as_p }}
+    <input type="submit" value="Save" >
+</form> -->
+
+
+<!-- Other method for showing product with direct object -->
+<!-- 
+
+<h1> {{object.title}} </h1>
+<p> {{object.description}} </p>
+<p> {{object.price}} </p>
+<p> {{object.summary}} </p>
+ 
+ -->

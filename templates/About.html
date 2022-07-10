@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{{title|capfirst|upper}}
+<h1>This is About</h2>
+<h2>Hello , this is template view</h1>
+    
+{{my_html|striptags|slugify}}
+
+<p>{{title}} , {{ my_number}}</p>
+
+
+<ul>
+{% for idesm in my_list %}
+    {% if idesm == 123 %}
+        <li> {{forloop.counter}}-{{idesm|add:1000}}</li>
+    
+    {% elif idesm == "ABG" %}
+        <li> "This is not a number"</li>
+    {%else%}
+        <li> {{forloop.counter}}-{{idesm}}</li>
+    
+    {% endif %}
+
+   
+
+{% endfor %}
+</ul>
+{% endblock content %}
